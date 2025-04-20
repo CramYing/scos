@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCOS - 源于scratcher的热爱</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2A5CAA;
+            --secondary: #6C48D2;
+            --accent: #32BEA6;
+            --bg: #F8FAFF;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: #2D3748;
+            line-height: 1.6;
+        }
+
+        .nav-bar {
+            background: var(--card-bg);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #4A5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero-section {
+            padding: 160px 5% 80px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .showcase-section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .framework-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .framework-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .framework-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .framework-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+        }
+
+        .tag {
+            background: rgba(42, 92, 170, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* 排行榜样式 */
+        .ranking-section {
+            padding: 5rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ranking-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .ranking-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .rank-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .rank-content {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .rank-description {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                gap: 1.5rem;
+            }
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+            .ranking-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <h2 style="color: var(--primary);">SC伪OS</h2>
+            <div class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#frameworks">项目</a>
+                <a href="#ranking">排行榜</a>
+                <a href="https://vika.cn/share/shritrQpZD8rkgiuW6Q4z">登记</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="home">
+        <h1 class="hero-title">Scratch自制伪系统</h1>
+        <p>基于热爱和追求</p>
+    </section>
+
+    <section class="showcase-section" id="frameworks">
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">收录项目</h2>
+        <p style="color: #718096;">scratcher们的作品</p>
+        <div class="showcase-grid">
+            <div class="framework-card">
+                <i class="fas fa-layer-group framework-icon"></i>
+                <h3>FreeUI</h3>
+                <p>shxUwU_Scratcher</p>
+                <div class="framework-tags">
+                    <span class="tag">移动端UI动画顶尖</span>
+                    <span class="tag">开源项目</span>
+                    <span class="tag">仿小米UI动画 双层图标</span>
+                </div>
+            </div>
+
+            <div class="framework-card">
+                <i class="fas fa-border-all framework-icon"></i>
+                <h3>HorBrk UI</h3>
+                <p>某不知名的CY</p>
+                <div class="framework-tags">
+                    <span class="tag">小米UI设计重绘</span>
+                    <span class="tag">交互式控制中心</span>
+                    <span class="tag">并行动画双层图标</span>
+                </div>
+            </div>
+
+            <div class="framework-card">
+                <i class="fas fa-water framework-icon"></i>
+                <h3>FloaOS</h3>
+                <p>PPN-design</p>
+                <div class="framework-tags">
+                    <span class="tag">拓展度高</span>
+                    <span class="tag">可嵌入HTML</span>
+                    <span class="tag">窗口多开管理</span>
+                </div>
+            </div>
+
+            <div class="framework-card">
+                <i class="fas fa-lightbulb framework-icon"></i>
+                <h3>Lumix</h3>
+                <p>枫</p>
+                <div class="framework-tags">
+                    <span class="tag">pc端操作系统</span>
+                    <span class="tag">自制伪语言设计</span>
+                    <span class="tag">算法顶尖</span>
+                </div>
+            </div>
+
+            <div class="framework-card">
+                <i class="fas fa-tools framework-icon"></i>
+                <h3>FixUI</h3>
+                <p>Bug修复团队</p>
+                <div class="framework-tags">
+                    <span class="tag">运行时修复</span>
+                    <span class="tag">热更新支持</span>
+                    <span class="tag">系统维护工具</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ranking-section" id="ranking">
+        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">项目排行榜</h2>
+        
+        <div class="ranking-card">
+            <div class="rank-number">1</div>
+            <div class="rank-content">
+                <div class="rank-title">FreeUI</div>
+                <div class="rank-description">
+                    总星标数：14★<br>
+                    最近更新：2024-04-19
+                </div>
+            </div>
+        </div>
+
+        <div class="ranking-card">
+            <div class="rank-number">2</div>
+            <div class="rank-content">
+                <div class="rank-title">HorBrkUI</div>
+                <div class="rank-description">
+                    总星标数：11.5 ★<br>
+                    最近更新：2024-04-20
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 滚动动画
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.framework-card, .ranking-card');
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // 初始化动画
+        document.querySelectorAll('.framework-card, .ranking-card').forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = `opacity 0.5s ${index*0.1}s, transform 0.5s ${index*0.1}s`;
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
